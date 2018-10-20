@@ -2,7 +2,7 @@
 baseurl: ""
 url: "https://cristalcorp.github.io"
 title: CristalCorp # site's title
-description: "Gotta find a description" # used by search engines
+description: "Gotta find a descriptio" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
@@ -10,7 +10,7 @@ theme_settings:
   # Meta
   title: CristalCorp # blog's title
   avatar: assets/img/logo_rond.svg
-  favicon: assets/logo_rond.svg
+  favicon: assets/logo.jpg
   gravatar: # Email MD5 hash
 
   # Header and footer text
