@@ -56,7 +56,7 @@ dirb http://10.10.10.10[:8080] -o dirb.[name].txt
 wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/megabeast.txt --hc 404,200 http://[ip:port]/FUZZ [ -b ‘cookie=value’ ] [ -w /usr/share/wordlist ]
 ```
 
-### Wfuzz :
+### WPScan :
 ```bash
 wpscan --host http://10.10.10.10 -e vt -e vp -e u
 ```
