@@ -58,7 +58,7 @@ wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/megabeast.txt --hc 404,200 ht
 
 ### WPScan :
 ```bash
-wpscan --host http://10.10.10.10 -e vt -e vp -e u
+wpscan --url http://10.10.10.10 -e vt -e vp -e u
 ```
 
 # DNS
