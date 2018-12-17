@@ -60,7 +60,7 @@ wfuzz -c -z file,/usr/share/wfuzz/wordlist/general/megabeast.txt --hc 404,200 ht
 
 ### WPScan :
 ```bash
-wpscan --url http://10.10.10.10 -e vt -e vp -e u --user-agent "--user-agent "Mozilla/5.0 (Windows NT 6.3; rv;36.0) Gecko/20100101 Firefox/36.0""
+wpscan --url http://10.10.10.10 -e vt -e vp -e u --user-agent --user-agent "Mozilla/5.0 (Windows NT 6.3; rv;36.0) Gecko/20100101 Firefox/36.0"
 ```
 
 # DNS
