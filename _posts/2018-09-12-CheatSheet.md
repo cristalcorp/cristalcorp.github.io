@@ -27,7 +27,7 @@ netdiscover -i eth0
 ```bash
 nmap -A -p- -T4 -oA nmap/[name].xml 10.10.10.10
 nmap --script=vuln -T4 -oA nmap/[name].xml 10.10.10.10
-nmap -sC -sV http.useragent="Mozilla 42"
+nmap -sC -sV --script-args http.useragent="Mozilla 42"
 
 xsltproc *.xml -o *.html
 ```
