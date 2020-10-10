@@ -1,7 +1,7 @@
 ---
 layout: post
 title: WireGuard
-feature-img: "assets/img/wireguard/banner.jpg"
+feature-img: "assets/img/wireguard/banner.png"
 tags: [Wireguard, VPN, SubSpace]
 ---
 
