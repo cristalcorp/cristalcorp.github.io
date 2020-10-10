@@ -6,6 +6,8 @@ tags: [Wireguard, VPN, SubSpace]
 ---
 
 Notes on setting up WireGuard and SubSpace.  
+
+
 ## WireGuard
 ### WireGuard Server
 
