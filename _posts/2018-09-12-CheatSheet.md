@@ -45,7 +45,7 @@ USERAGENT=Mozilla/5.00 (Nikto/@VERSION) (Evasions:@EVASIONS) (Test:@TESTID)
 ```
 ### Gobuster :
 ```bash
-gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -u http://10.10.10.10 -o [name].log -t 25 [-k] [-c cookie] [-a useragent]
+gobuster dir -w /usr/share/wordlists/dirbuster/directory-list-lowercase-2.3-medium.txt -b 400,404,500 -u http://10.10.10.10 -o [name].log -t 25 [-k] [-c cookie] [-a useragent]
 ```
 
 ### Dirb :
