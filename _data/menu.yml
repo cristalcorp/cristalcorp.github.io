@@ -1,0 +1,6 @@
+# To add links to the navigation bar.
+- github:
+  title: GitHub
+  url: https://https://github.com/CristaLCorp
+  hide: true
+  position: 1

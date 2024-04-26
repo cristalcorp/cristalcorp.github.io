@@ -1,8 +1,9 @@
 ---
 layout: post
 title: Cheat Sheet
-img: "assets/img/portfolio/cheatsheet.png"
+feature-img: "assets/img/posts/cheatsheet/cheatsheet_banner.png"
 date: September, 09 2018
+categories: hacking
 tags: [masscan, netdiscover, nmap, nikto, dirsearch, gobuster, dirb, wfuzz, dig, host, dnsrecon, hydra, sqlmap, hashcat, powershell, metasploit, netstat, lsof, buffer overflow, fuzzing, msfvenom, vim, xss]
 ---
 
