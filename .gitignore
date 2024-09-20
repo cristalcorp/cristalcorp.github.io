@@ -20,6 +20,7 @@ Gemfile.lock
 *.gem
 .gems
 jekyll-theme-type-on-strap.gemspec
+.bundle
 
 # nodejs files
 node_modules/*
