@@ -30,6 +30,9 @@ From within the jekyll folder
 # Install the needed gems
 gem install bundler
 
+# Add bundle tools to the PATH. In .zshrc add
+export PATH=$PATH:~/.local/share/gem/ruby/3.2.0/bin
+
 # To avoid permissions issue we need to set a directory for bundle to install the needed gems
 mkdir ~/Documents/ruby/
 bundle config path ~/Documents/ruby
