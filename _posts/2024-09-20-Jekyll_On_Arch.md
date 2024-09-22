@@ -12,6 +12,8 @@ How to make a local environment on Arch for Jekyll blog dev
 
 In order to have the ability to work locally on this blog, a few things are necessary. As I forget them all every time I need to reconfigure my computer, I ll go through them here.
 
+Note that SVG for banners can be found [here](https://worldvectorlogo.com/)
+
 ## Side A : Arch
 First of all, install Ruby. Usually ERB is included but not this time ( or not here at least ) so the package ruby-erb is also needed. Base-devel is needed for compilations.
 
