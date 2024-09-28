@@ -11,6 +11,23 @@ Notes about the IBM course "Machine Learning with Python"
 # Machine Learning with Python
 
 ## Linear Regression
+Linear Regression is used to predict continuous values, for example it can be used to predict :
+* Sales forecasting ( Target : total yearly sales. Independant variables : Age, Education, Years of experience )
+* Satisfaction analysis ( Target : Individual satisfaction. Independant variables : Demographic ans psychological factors )
+* Price estimation ( Target : Price of a house in an area. Independant variables : Size, number of bedrooms, ...)
+* Employment income ( Target : Income. Independant variables : Hours of work, education, occupation, sex, age, years of experience, ...)
+
+There are many Regression Algorithms, to name a few :
+* Ordinal regression
+* Poisson regression
+* Fast forest quantile regression
+* Linear, polynomial, Lasso, Stepwise, Ridge regression
+* Bayesian linear regression
+* Neural network regression
+* Decision forest regression
+* Boosted decision tree regression
+* KNN ( K-nearest Neighbors )
+
 $$ \bar{x} $$ = moyenne des parametres independants (features)  
 $$ \bar{y} $$ = moyenne des parametres dependants (target)  
 $$ i = $$ same calcul pour chaque valeur  
