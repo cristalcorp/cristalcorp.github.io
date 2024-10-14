@@ -31,24 +31,52 @@ There are many Regression Algorithms, to name a few :
 * KNN ( K-nearest Neighbors )
 
 ## Simple Linear Regression
-Simple Linear Regression is when 1 independant variable is used to estimate a dependant variable. As you can guess, when more than one independant variable is used, the process is called Multiple Linear Regression.
+Simple Linear Regression is when 1 independant variable is used to estimate a dependant, continuous variable. As you can guess, when more than one independant variable is used, the process is called Multiple Linear Regression.
+Pros of Linear Regression :
+* Very Fast
+* No paramter tuning
+* Easy to understand and higly interpretable
 
-$$ \hat{y} $$ = dependant variable  or the predicted value  
-$$ x_1 $$ = independant variable  
+  
+### Fitting Line
+The fit line is the line that goes through the data, representing a tendance of how dependant variable values evolve related to the independant variables. It is usually represented as a polynomial :   
   
 => $$ \boxed{\hat{y} = \overbrace{\theta_0 + \theta_1}^{\text{parameters}}\underbrace{x_1}_{\text{predictor}}} $$  
   
-$$ \bar{x} $$ = moyenne des parametres independants (features)  
-$$ \bar{y} $$ = moyenne des parametres dependants (target)  
-$$ i = $$ same calcul pour chaque valeur  
-$$ \theta_1 = \cfrac{\sum_{i}^s = 1(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i}^s = 1(x_i - \bar{x})^2}  $$  (slope)
+$$ \hat{y} $$ = dependant variable  or the predicted value  
+$$ x_1 $$ = independant variable  
   
-$$ \theta_0 = \bar{y} - \theta_1\bar{x} $$ (Bias Coefficient ?)  
+Coefficients of the linear equation :  
+$$ \theta_0 $$ = intercept  
+$$ \theta_1 $$ = slope or gradient of the fitting line
+
+For each data, there is a delta between the predicted value and the actual value on our data set. The best fit is where the mean (squarred here) of all the residual erros is the lowest. See below for the definition of the Mean Squarred Error (MSE). The objective of linear regression is to minimized this MSE equation by finding the best parameters $$ \theta_0 $$ and $$ \theta_1 $$.
+  
+### Calculating $$ \theta_0 $$ and $$ \theta_1 $$
+Linear regression estimates the coefficient of the line. To do so, we must calculate $$ \theta_0 $$ and $$ \theta_1 $$ (adjust the parameters) to find the best line to fit the data.  
+  
+$$ \hat{y} = \color{orange}{\theta_0} + \color{cyan}{\theta_1x_1} $$  
+
   
   
-With $$ \theta_0 $$ being the intercept and $$ \theta_1 $$ being the slope.  
+$$ \color{cyan}{\theta_1 = \cfrac{\sum_{i}^s = 1(x_i - \bar{x})(y_i - \bar{y})}{\sum_{i}^s = 1(x_i - \bar{x})^2}}  $$  (slope)
+  
+$$ \color{orange}{\theta_0 = \bar{y} - \theta_1\bar{x}} $$ (Bias Coefficient)
+  
+$$ \bar{x} $$ = mean of independant variables (features)  
+$$ \bar{y} $$ = mean of dependant variables (target)  
+  
+With $$ \theta_0 $$ being the intercept and $$ \theta_1 $$ being the slope. As it will go through all the data one by one, $$ i $$ represents the current vPalue and $$ s $$ the total number of values. 
 
 ### Error and Accuracy
+In order to evaluate our model, we need to compare our predictions ( $$ \hat{y} $$) with the actual values ( $$ y $$ ). 
+If we "Train and Test" on the same dataset, we will end up with a model that has "High Training accuracy" and "Low out-of-sample accuracy". This is called over-fitting. Over-fitting is when the model is overly trained to the dataset, which may capture noise and produce a non-generalized model.
+To avoid over-fitting, we split the dataset in training set and testing set in an approach called "Train/Test split". In this approach, the Training Set and the Testing Set are **mutually exclusive**. This method provides a more accurate evaluation on out-of-sample accuracy. 
+
+#### K-Fold cross-validation
+One down side of that approach is that it makes it higly depdendant on which datasets the data is trained and tested. The K-Fold cross-validation is there to overcome this downside.
+It basically is using multiple (K) Train/Test Splits on the same dataset, using different test sample each time and calculating the average accuracy from the different Train/Test splits. This provide a more consistent out-of-sample accuracy
+  
 #### Evaluation metrics
 ##### Mean Absolute Error (MAE)
 MAE = $$ \cfrac{1}{n} \sum_{j=1}^n |y_j - \hat{y}_j| $$  
