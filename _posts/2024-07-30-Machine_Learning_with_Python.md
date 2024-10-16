@@ -83,7 +83,7 @@ The choice of metric completely depends on the type of model, your data type and
 ##### Mean Absolute Error (MAE)
 It is the average error.  
   
-MAE = $$ \cfrac{1}{n} \sum_{j=1}^n |y_j - \hat{y}_j| $$  
+MAE = $$ \cfrac{1}{n} \sum_{j=1}^n y_j - \hat{y}_j $$
   
 MAE = $$ \cfrac{(y_{j1} - \hat{y}_{j1}) + (y_{j2} - \hat{y}_{j2}) + (y_{j3} - \hat{y}_{j3}) + ... + (y_{jn} - \hat{y}_{jn})}{n} $$
 ##### Mean Squared Error (MSE)
@@ -96,7 +96,7 @@ Popular as well as it can be interpreted in the same unit as the response vector
   
 RMSE = $$ \sqrt{\cfrac{1}{n}\sum_{j=1}^n(y_j - \hat{y}_j)^2} $$
 ##### Relative Absolute Error (RAE)
-Also known as residual sum of square. ERRATUM HERE. where $$ \bar{y} $$ is a mean value of $$ y $$, takes the total absolute error and normalizes it, by dividing by the total absolute error of the sample predictor.  
+Where $$ \bar{y} $$ is a mean value of $$ y $$, takes the total absolute error and normalizes it, by dividing by the total absolute error of the sample predictor.  
   
 RAE = $$ \cfrac{\sum_{j=1}^n|y_j - \hat{y}_j|}{\sum_{j=1}^n|y_j - \bar{y}|} $$
 ##### Relative Squared Error (RSE)
