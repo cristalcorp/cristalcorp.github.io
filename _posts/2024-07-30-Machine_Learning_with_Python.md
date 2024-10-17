@@ -83,7 +83,7 @@ The choice of metric completely depends on the type of model, your data type and
 ##### Mean Absolute Error (MAE)
 It is the average error.  
   
-MAE = $$ \cfrac{1}{n} \sum_{j=1}^n y_j - \hat{y}_j $$
+MAE = $$ \cfrac{1}{n}\sum_{j=1}^n |y_j - \hat{y}_j| $$
   
 MAE = $$ \cfrac{(y_{j1} - \hat{y}_{j1}) + (y_{j2} - \hat{y}_{j2}) + (y_{j3} - \hat{y}_{j3}) + ... + (y_{jn} - \hat{y}_{jn})}{n} $$
 ##### Mean Squared Error (MSE)
