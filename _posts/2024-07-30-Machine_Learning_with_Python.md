@@ -135,6 +135,8 @@ The Total Sum of Squares express the variance inside the data. $$ R^2 $$ can als
 
 $$ R^2 = 1 - \cfrac{RSS}{TSS} $$
 
+## Multiple Linear Regression
+
 ## Classification
 
 ### Binary Classification VS Mutliclass Classification
