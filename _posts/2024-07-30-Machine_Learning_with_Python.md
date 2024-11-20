@@ -136,6 +136,38 @@ The Total Sum of Squares express the variance inside the data. $$ R^2 $$ can als
 $$ R^2 = 1 - \cfrac{RSS}{TSS} $$
 
 ## Multiple Linear Regression
+When multiple independant variables are used to predict one dependant variable, the process is called *Multiple Linear Regression*.  
+
+Basically there are two applications for Multiple Linear Regression :
+* Indepdendant variables effectiveness on prediction. *Does this, this or that impact the prediction ?*
+* Predicting impact of changes. *How much the dependant variable is affected when we modify one independant variable ?*
+
+It uses multiple independant variables ( or predictors ) to predict a continuous value, the dependant variable.
+
+In Multiple Linear Regression, the target value *Y* is a linear combination of independant variables *X*.
+
+Generally the model if of the form :
+  
+-> $$ \hat{y} = \theta_0 + \theta_1x_1 + \theta_2x_2 + ... + \theta_nx_n $$
+
+Vector form : $$ \hat{y} = \theta^TX $$
+
+It can be shown as a dot product of two vectors : the *parameters vector* and the *feature set vector*.  
+  
+Generally we can show the equation for a multi dimensional space as $$ \theta $$ transposed $$ X $$. 
+Where $$ \theta $$ is an n by 1 vector of unknown parameters in a multi demensional space and $$ X $$ is the vector of the featured sets.  
+As $$ \theta $$ is a vector of coefficients and is supposed to be multiplied by X.  
+  
+Conventionnaly it is shown as *transposed theta* : $$ \theta^T = [\theta_0, \theta_1, \theta_2, ...] $$
+  
+$$ \theta $$ is also called the *parameters* or *weights vectors* of the regression equation.  
+  
+and $$ X $$ is the feature set : $$ X =  \begin{bmatrix}1 \\X_1 \\X_2 \\...\end{bmatrix} $$
+  
+Here $$ X_1 $$ could be the engine size, $$ X_2 $$ the number of cylinders, and so on.  
+The first element of the feature set is set to 1 as it turns the $$ \theta_0 $$ into the *intercept* or *bias parameter* when the vector is multiplied by the parameter vector.  
+  
+$$ \theta^TX $$ in a 1-dimensional space is the equation of a line. We used it in **Simple Linear Regression**. In higher dimensions, when we have more than 1 input (or X), the line is called a plane, or a hyperplane. This is what we use in multiple linear regression. We try to find the best fit hyperplance for our data.
 
 ## Classification
 
