@@ -26,3 +26,6 @@ jekyll-theme-type-on-strap.gemspec
 node_modules/*
 package-lock.json
 package.json
+
+# git script
+git.sh
