@@ -167,7 +167,11 @@ and $$ X $$ is the feature set : $$ X =  \begin{bmatrix}1 \\X_1 \\X_2 \\...\end{
 Here $$ X_1 $$ could be the engine size, $$ X_2 $$ the number of cylinders, and so on.  
 The first element of the feature set is set to 1 as it turns the $$ \theta_0 $$ into the *intercept* or *bias parameter* when the vector is multiplied by the parameter vector.  
   
-$$ \theta^TX $$ in a 1-dimensional space is the equation of a line. We used it in **Simple Linear Regression**. In higher dimensions, when we have more than 1 input (or X), the line is called a plane, or a hyperplane. This is what we use in multiple linear regression. We try to find the best fit hyperplance for our data.
+$$ \theta^TX $$ in a 1-dimensional space is the equation of a line. We used it in **Simple Linear Regression**. In higher dimensions, when we have more than 1 input (or X), the line is called a plane, or a hyperplane. This is what we use in multiple linear regression. We try to find the best fit hyperplane for our data.
+  
+How do we find the optimized parameters ? How do we find the values for $$ \theta $$ vector that minimize the error of the prediction ?
+  
+Optimized parameters are the one wich lead to the fewest errors.
 
 ## Classification
 
