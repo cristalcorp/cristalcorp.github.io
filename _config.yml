@@ -56,6 +56,9 @@ exclude: [".jekyll-cache", ".jekyll-metadata", ".idea", "vendor/*", "assets/node
 # theme: type-on-strap                                  # if using the theme as a jekyll theme gem
 remote_theme: sylhare/Type-on-Strap                     # If using as a remote_theme in github
 
+# copy code icon
+copy_code: true
+
 # # Tables
 # markdown: kramdown
 # kramdown:
