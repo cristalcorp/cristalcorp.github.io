@@ -1,0 +1,16 @@
+<script>
+document.querySelectorAll('pre > code').forEach(function(block) {
+  var btn = document.createElement('button');
+  btn.innerText = 'Copy';
+  btn.style.cssText = 'position:absolute;top:4px;right:4px;font-size:12px;padding:2px 8px;cursor:pointer;border:1px solid #ccc;border-radius:3px;background:#fff';
+  var pre = block.parentNode;
+  pre.style.position = 'relative';
+  pre.appendChild(btn);
+  btn.addEventListener('click', function() {
+    navigator.clipboard.writeText(block.innerText).then(function() {
+      btn.innerText = 'Copied!';
+      setTimeout(function(){ btn.innerText = 'Copy'; }, 2000);
+    });
+  });
+});
+</script>
