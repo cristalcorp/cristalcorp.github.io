@@ -3,14 +3,20 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('pre > code').forEach(function(block) {
     var btn = document.createElement('button');
     btn.innerText = 'Copy';
-    btn.style.cssText = 'position:absolute;top:4px;right:4px;font-size:12px;padding:2px 8px;cursor:pointer;border:1px solid #ccc;border-radius:3px;background:#fff';
+    btn.style.cssText = 'position:absolute;top:8px;right:8px;font-size:11px;padding:3px 10px;cursor:pointer;border:1px solid #555;border-radius:4px;background:#2d2d2d;color:#ccc;opacity:0.8;transition:opacity 0.2s';
+    btn.onmouseenter = function(){ btn.style.opacity='1'; };
+    btn.onmouseleave = function(){ btn.style.opacity='0.8'; };
     var pre = block.parentNode;
     pre.style.position = 'relative';
     pre.appendChild(btn);
     btn.addEventListener('click', function() {
-      navigator.clipboard.writeText(block.innerText).then(function() {
+      navigator.clipboard.writeText(block.textContent).then(function() {
         btn.innerText = 'Copied!';
-        setTimeout(function(){ btn.innerText = 'Copy'; }, 2000);
+        btn.style.color = '#7ec8a0';
+        setTimeout(function(){
+          btn.innerText = 'Copy';
+          btn.style.color = '#ccc';
+        }, 2000);
       });
     });
   });
